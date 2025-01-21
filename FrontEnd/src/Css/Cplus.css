@@ -1,0 +1,569 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Lora:wght@400;700&display=swap');
+
+/* General Styling */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F4F4F4; /* Light Grey background */
+  color: #333333; /* Dark Charcoal for text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for C++ Content */
+.cpp-content {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 40px;
+  background: white; /* Dark Background for better contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cpp-content:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cpp-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 3px solid black !important; /* Gold accent */
+  padding-bottom: 10px;
+  position: relative;
+  letter-spacing: 1px;
+  /* color: black !important;  */
+  color: #1b263b !important; 
+}
+
+.cpp-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #411a75 !important; /* Gold accent */
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.cpp-heading:hover::before {
+  transform: scaleX(1);
+}
+
+.cpp-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: black; /* Light grey text */
+  font-family: 'Lora', serif; /* Use Lora for body text */
+}
+
+.cpp-list {
+  list-style-type: none;
+  padding-left: 0;
+  
+}
+
+.cpp-list li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: black; 
+  line-height: 1.8;
+  position: relative;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+}
+
+.cpp-list li::before {
+  content: "\2022"; /* Bullet symbol */
+  position: absolute;
+  left: 0;
+  color: black; /* Gold bullet */
+  font-size: 1.5rem;
+}
+
+.cpp-list li:hover {
+  color: #003366; /* Deep Blue */
+  background-color: #E8F0FE; /* Light Blue background on hover */
+  padding-left: 25px;
+}
+
+/* Styling for Image */
+.cpp-image-container {
+  text-align: center;
+  margin: 30px 0;
+  border: 10px solid black;
+}
+
+.cpp-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+.cpp-image:hover {
+  transform: scale(1.05);
+}
+
+/* Timestamp Styling */
+.timestamp {
+  font-size: 1rem;
+  color: #888888; /* Lighter grey for timestamp */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.timestamp span {
+  color: #003366; /* Deep Blue */
+  font-weight: bold;
+}
+
+/* Code Snippet Styling */
+/* Importing the Fira Code font */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+.cpp-snippet-container {
+  background-color: black!important; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  margin: 20px 0;
+  overflow-x: auto;
+  transition: all 0.3s ease; 
+}
+
+.cpp-snippet-container pre {
+  background-color: white !important; 
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  font-family: Arial, Helvetica, sans-serif !important; 
+}
+
+.cpp-snippet-container pre code {
+  color: black;
+  font-size: 1rem;
+}
+
+/* Add hover effect for premium feel */
+.cpp-snippet-container:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); 
+  transition: all 0.3s ease; 
+  transform: scale(1.01); /* Slight zoom effect on hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cpp-content {
+    padding: 20px;
+  }
+
+  .cpp-heading {
+    font-size: 2rem;
+  }
+
+  .cpp-text, .cpp-list li {
+    font-size: 1rem;
+  }
+
+  .cpp-list li::before {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cpp-content {
+    padding: 15px;
+  }
+
+  .cpp-heading {
+    font-size: 1.8rem;
+  }
+
+  .cpp-text, .cpp-list li {
+    font-size: 0.95rem;
+  }
+}
+/* Styling for the warning message */
+.warning-message {
+  font-size: 40px;
+  color: #d9534f; 
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(217, 53, 78, 0.1); 
+  border: 2px solid #d9534f;
+  border-radius: 8px;
+  max-width: 80%;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 0.5s ease-out, fadeIn 1s ease-in-out;
+  background-color:rgb(122, 21, 21);
+  color: white;
+}
+
+.warning-message .warning-icon {
+  margin-right: 10px;
+  font-size: 24px;
+  color: black;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* General Styling */
+/* General Styling */
+
+/* Basic Syntax Container */
+.basic-syntax-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.basic-syntax-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Basic Syntax Heading */
+.basic-syntax-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 3px solid #411a75;
+  padding-bottom: 10px;
+  position: relative;
+  letter-spacing: 1px;
+  color: #1b263b;
+}
+
+.basic-syntax-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #411a75;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.basic-syntax-heading:hover::before {
+  transform: scaleX(1);
+}
+
+/* Basic Syntax Text */
+.basic-syntax-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Syntax Snippet Container */
+.syntax-snippet-container {
+  background-color: #1b263b !important;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+
+.syntax-snippet-container pre {
+  background-color: #eef0f2 !important;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Add hover effect for premium feel */
+.syntax-snippet-container:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+/* Basic Syntax Subheading */
+.basic-syntax-subheading {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #003366;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .basic-syntax-container {
+    padding: 20px;
+  }
+
+  .basic-syntax-heading {
+    font-size: 2rem;
+  }
+
+  .basic-syntax-text {
+    font-size: 1rem;
+  }
+
+  .basic-syntax-subheading {
+    font-size: 1.5rem;
+  }
+
+  .syntax-snippet-container pre {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .basic-syntax-container {
+    padding: 15px;
+  }
+
+  .basic-syntax-heading {
+    font-size: 1.8rem;
+  }
+
+  .basic-syntax-text {
+    font-size: 0.95rem;
+  }
+
+  .basic-syntax-subheading {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* =================================================== datatype */
+/* Data Types Section */
+.data-types-section {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.data-types-section:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Data Types Heading */
+.data-types-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 3px solid #411a75;
+  padding-bottom: 10px;
+  position: relative;
+  letter-spacing: 1px;
+  color: #1b263b; 
+}
+
+.data-types-section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #411a75;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.data-types-section h2:hover::before {
+  transform: scaleX(1);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+  font-weight: bold;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #003366;
+  font-size: 1.5rem;
+}
+
+td {
+  background-color: #fff;
+}
+
+/* Data Types Text */
+.data-types-section p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: black;
+  font-family: 'Lora', serif;
+}
+
+/* List Styling */
+.data-types-section ul {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #003366;
+}
+
+.data-types-section ul li {
+  margin: 10px 0;
+}
+
+.data-types-section ul li b {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Syntax Snippet Container */
+.syntax-snippet-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+
+.syntax-snippet-container pre {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+}
+
+.syntax-snippet-container:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+/* Explanation Styling */
+.data-types-section h3 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #003366;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .data-types-section {
+    padding: 20px;
+  }
+
+  .data-types-section h2 {
+    font-size: 2rem;
+  }
+
+  .data-types-section p {
+    font-size: 1rem;
+  }
+
+  .data-types-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .syntax-snippet-container pre {
+    font-size: 0.95rem;
+  }
+
+  table {
+    font-size: 0.95rem;
+  }
+
+  table th, table td {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-types-section {
+    padding: 15px;
+  }
+
+  .data-types-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .data-types-section p {
+    font-size: 0.95rem;
+  }
+
+  .data-types-section h3 {
+    font-size: 1.3rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  table th, table td {
+    padding: 5px;
+  }
+}

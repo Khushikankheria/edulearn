@@ -1,0 +1,129 @@
+/* Global Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  /* background: linear-gradient(to right, #007bff, #4e73df); */
+  background-color:  #461389;
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* Mission Section */
+.mission-section img {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mission-section .section-title {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.mission-section .mission-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.mission-section ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+#img-of-mission
+{
+  height: 300px;
+  width: 400px;
+  border: 3px solid black;
+}
+
+/* Vision Section Styles */
+.vision-section {
+  background: linear-gradient(to right, #4e73df, #2c3e50);
+  color: white;
+  padding: 60px 0;
+}
+
+.vision-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.vision-card {
+  background-color: white;
+  color: #333;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.vision-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.vision-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+.vision-card-text {
+  font-size: 1rem;
+  color: #555;
+  flex-grow: 1;
+}
+
+.vision-card i {
+  transition: transform 0.3s ease;
+}
+
+.vision-card:hover i {
+  transform: scale(1.2);
+}
+
+/* 
+
+/* Core Values Section */
+.values-section .value-card {
+  border-radius: 10px;
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.values-section .value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.values-section .value-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.values-section .value-description {
+  font-size: 1rem;
+  color: #555;
+}
+

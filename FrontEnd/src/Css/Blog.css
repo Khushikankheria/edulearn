@@ -1,0 +1,103 @@
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(25% - 20px); 
+  text-align: left;
+  box-sizing: border-box; 
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures all cards have equal height */
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Expands content to fit the available space */
+}
+
+.blog-date {
+  font-size: 14px;
+  color: #888;
+}
+
+.blog-heading {
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.blog-description {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-read-more {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  align-self: center;
+}
+
+.blog-read-more:hover {
+  background-color: #6a0dad;
+  color: black;
+}
+.blog-title{
+  text-align: center;
+  color: #fdca40 !important;
+  font-size: 5rem !important;
+  display: none;
+}
+/* Responsive Design */
+
+/* For tablets (2 cards per row) */
+@media (max-width: 992px) {
+  .blog-card {
+      width: calc(50% - 20px); 
+  }
+  .blog-title {
+      font-size: 35px;
+  }
+}
+
+/* For mobile devices (1 card per row) */
+@media (max-width: 576px) {
+  .blog-card {
+      width: 100%; 
+  }
+  .blog-title {
+      font-size: 28px;
+  }
+}
