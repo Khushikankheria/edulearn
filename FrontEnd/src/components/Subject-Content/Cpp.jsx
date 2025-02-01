@@ -1,7 +1,6 @@
-
 import React from 'react';
 import Timestamp from '../Timestamp'; // Component for showing the timestamp
-import "../../Css/Cplus.css";
+import "../../Css/SubStyle.css";
 import { coy } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 // For prop validation
@@ -11,15 +10,15 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 const Cpp = ({ topic }) => {
   const content = {
     "Introduction to C++": (
-      <div className="cpp-content">
+      <div className="content">
         <div className="timestamp" style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#555' }}>
           <Timestamp />
         </div>
 
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #333' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #333' }}>
           What is C++?
         </h2>
-        <p className="cpp-text"style={{ fontFamily: 'Open Sans, sans-serif' }}>
+        <p className="text"style={{ fontFamily: 'Open Sans, sans-serif' }}>
           C++ is a cross-platform programming language primarily used for developing high-performance applications. It was created by Bjarne Stroustrup in 1979 as an extension to the C programming language, adding object-oriented features like classes and objects.
         </p>
 
@@ -37,12 +36,12 @@ const Cpp = ({ topic }) => {
           />
         </div>
 
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
           C++ Syntax Basics
         </h2>
-        <p className="cpp-text" style={{ fontFamily: 'Open Sans, sans-serif' }}>Here's a simple C++ program demonstrating basic syntax:</p>
+        <p className="text" style={{ fontFamily: 'Open Sans, sans-serif' }}>Here's a simple C++ program demonstrating basic syntax:</p>
 
-        <div className="cpp-snippet-container">
+        <div className="snippet-container">
           <SyntaxHighlighter language="cpp" style={coy}>
             {`
 #include <iostream>
@@ -64,20 +63,20 @@ int main() {
           </SyntaxHighlighter>
         </div>
 
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
           Why Use C++?
         </h2>
-        <ul className="cpp-list">
+        <ul className="list">
           <li>Widely used in operating systems, GUIs, and embedded systems.</li>
           <li>Offers object-oriented programming features for clear and reusable code.</li>
           <li>Highly portable across platforms.</li>
           <li>Fun and relatively easy to learn for those familiar with languages like C, C#, or Java.</li>
         </ul>
 
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
           Key Features of C++
         </h2>
-        <ul className="cpp-list">
+        <ul className="list">
           <li>
             <strong>Object-Oriented Programming (OOP):</strong> C++ supports concepts like classes, objects, inheritance, polymorphism, encapsulation, and abstraction.
           </li>
@@ -92,27 +91,27 @@ int main() {
           </li>
         </ul>
 
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
           Basic C++ Concepts
         </h2>
-        <ul className="cpp-list">
+        <ul className="list">
           <li><strong>Variables and Data Types:</strong> C++ supports several data types like int, float, char, and bool. You can also define your custom types using classes.</li>
           <li><strong>Control Structures:</strong> Includes conditional statements (if, else, switch) and loops (for, while, do-while) to control the flow of the program.</li>
           <li><strong>Functions:</strong> Functions are blocks of code that can be called to perform specific tasks. C++ allows function overloading and default arguments.</li>
           <li><strong>Memory Management:</strong> C++ allows direct memory manipulation using pointers, which can enhance performance but also adds complexity.</li>
         </ul>
 
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
           C++ in Modern Development
         </h2>
-        <p className="cpp-text" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+        <p className="text" style={{ fontFamily: 'Open Sans, sans-serif' }}>
           C++ is used extensively in areas where performance is critical. It powers everything from game engines, operating systems, to real-time systems like robotics. Some of the most well-known game engines, such as Unreal Engine, are built using C++ due to its speed and low-level system control.
         </p>
 
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #FFD700' }}>
           Conclusion
         </h2>
-        <p className="cpp-text" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+        <p className="text" style={{ fontFamily: 'Open Sans, sans-serif' }}>
           C++ remains a powerful and versatile programming language, offering unparalleled control and performance. While it has its challenges, mastering C++ provides a strong foundation for developing robust and efficient applications in a wide range of domains, from embedded systems to complex software applications.
         </p>
       </div>
@@ -123,7 +122,7 @@ int main() {
 <div className="timestamp" style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#555' }}>
           <Timestamp />
         </div>
-        <h2 className="cpp-heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #333' }}>
+        <h2 className="heading" style={{ color: '#1a1a1a', borderBottom: '3px solid #333' }}>
           DATA TYPES IN C++
         </h2>
       <p style={{ fontFamily:'arial' }}>
@@ -234,7 +233,7 @@ int main() {
 
         
       <h3>Primitive Data Types Example:</h3>
-      <div className="cpp-snippet-container">
+      <div className="snippet-container">
           <SyntaxHighlighter language="cpp" style={coy}>
 
         {`#include <iostream>
@@ -259,7 +258,7 @@ int main() {
 </SyntaxHighlighter>
 </div>
       <h3>Strings Example:</h3>
-      <div className="cpp-snippet-container">
+      <div className="snippet-container">
           <SyntaxHighlighter language="cpp" style={coy}>
         {`#include <iostream>
 #include <string>
@@ -280,7 +279,7 @@ int main() {
 </div>
 
       <h3>Size of Data Types:</h3>
-      <div className="cpp-snippet-container">
+      <div className="snippet-container">
       <SyntaxHighlighter language="cpp" style={coy}>
         {`#include <iostream>
 using namespace std;
@@ -305,7 +304,7 @@ int main() {
       </p>
 
       <h3>Working with Constants:</h3>
-      <div className="cpp-snippet-container">
+      <div className="snippet-container">
       <SyntaxHighlighter language="cpp" style={coy}>
         {`#include <iostream>
 using namespace std;
@@ -335,7 +334,7 @@ int main() {
         <div className="timestamp" style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#555' }}>
           <Timestamp />
         </div>
-        <h1 className='cpp-heading'>Functions in C++</h1>
+        <h1 className='heading'>Functions in C++</h1>
         <p style={{fontFamily:"arial"}}>
           A function is a block of code that performs a specific task. Functions help organize and
           reuse code efficiently.
@@ -351,7 +350,7 @@ int main() {
           <li><b>User-defined functions:</b> Created by the programmer.</li>
         </ul>
         <h3>Example of a User-Defined Function:</h3>
-      <div className="cpp-snippet-container">
+      <div className="snippet-container">
         <SyntaxHighlighter language="cpp" style={coy}>
           {`#include <iostream>
 using namespace std;
@@ -413,7 +412,7 @@ int main() {
     <div className="timestamp" style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#555' }}>
           <Timestamp />
         </div>
-    <h1 className='cpp-heading'>Object-Oriented Programming in C++</h1>
+    <h1 className='heading'>Object-Oriented Programming in C++</h1>
     <p style={{fontFamily:"arial"}}>
       OOP is a paradigm that organizes code using objects, which are instances of classes. It provides a structured approach to software development by focusing on objects and their interactions.
     </p>
@@ -426,7 +425,7 @@ int main() {
     <p>
       A <b>class</b> is a blueprint for creating objects. An <b>object</b> is an instance of a class, representing real-world entities.
     </p>
-    <div className="cpp-snippet-container">
+    <div className="snippet-container">
     <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
@@ -460,7 +459,7 @@ int main() {
       <img src="https://media.geeksforgeeks.org/wp-content/uploads/Encapsulation-in-C-1.jpg" alt="oops" style={{ width: '100%',height:"17rem", maxWidth: '500px',margin:"auto"}} />
   </div>
   <br/>
-  <div className="cpp-snippet-container">
+  <div className="snippet-container">
     <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
@@ -503,7 +502,7 @@ int main() {
       <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220817100609/inheritance-660x454.png" alt="oops" style={{ width: '100%',height:"18rem", maxWidth: '500px',margin:"auto"}} />
   </div>
   <br/>
-  <div className="cpp-snippet-container">
+  <div className="snippet-container">
     <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
@@ -545,7 +544,7 @@ int main() {
   </div>
   <br/>
     <h3>Example of Method Overriding:</h3>
-    <div className="cpp-snippet-container">
+    <div className="snippet-container">
     <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
@@ -588,7 +587,7 @@ int main() {
       <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220927121207/AbstractioninC-282x300.png" alt="oops" style={{ width: '100%',height:"18rem", maxWidth: '500px',margin:"auto"}} />
   </div>
   <br/>
-  <div className="cpp-snippet-container">
+  <div className="snippet-container">
     <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
@@ -631,7 +630,7 @@ int main() {
     <div className="timestamp" style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#555' }}>
           <Timestamp />
         </div>
-    <h1 className='cpp-heading'>Control Structures</h1>
+    <h1 className='heading'>Control Structures</h1>
     <p style={{ fontFamily:'arial' }}>
       Control structures manage the flow of a program. Key types include:
     </p>
@@ -662,7 +661,7 @@ int main() {
       <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231115161034/flow-diagram-of-switch-in-c.png" alt="if flowchart" style={{ width: '100%', maxWidth: '500px' }} />
       </div>
     </ul>
-    <div className="cpp-snippet-container">
+    <div className="snippet-container">
           <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
@@ -701,7 +700,7 @@ int main() {
       <li><b>while:</b> Repeats code while a condition is true.</li>
       <li><b>do-while:</b> Executes code at least once, then checks the condition.</li>
     </ul>
-    <div className="cpp-snippet-container">
+    <div className="snippet-container">
           <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
@@ -735,7 +734,7 @@ int main() {
       <li><b>continue:</b> Skips the current iteration of a loop.</li>
       <li><b>goto:</b> Jumps to a labeled statement (not recommended for structured programming).</li>
     </ul>
-    <div className="cpp-snippet-container">
+    <div className="snippet-container">
     <SyntaxHighlighter language="cpp" style={coy}>
       {`#include <iostream>
 using namespace std;
