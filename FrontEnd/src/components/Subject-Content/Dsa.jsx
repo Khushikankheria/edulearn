@@ -702,12 +702,13 @@ int main() {
 
   };
 
-
   return (
     <div>
-      {/* <Timestamp /> */}
+      {/* Display error message with warning icon and animation if topic not found */}
       {content[topic] || (
-        <p style={{ color: 'red' }}>Topic not found. Please select a valid topic.</p>
+        <div className="warning-message">
+          <p>Topic not found. Please select a valid topic.</p>
+        </div>
       )}
     </div>
   );
