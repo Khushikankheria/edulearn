@@ -1379,7 +1379,16 @@ console.log(a, b); // Output: 1 2`}
     )
   };
 
-  return <div>{content[topic] || <p className="warning-message">Topic not found.</p>}</div>;
+  return (
+    <div>
+      {/* Display error message with warning icon and animation if topic not found */}
+      {content[topic] || (
+        <div className="warning-message">
+          <p>Topic not found. Please select a valid topic.</p>
+        </div>
+      )}
+    </div>
+  );
 };
 
 JavaScript.propTypes = {
