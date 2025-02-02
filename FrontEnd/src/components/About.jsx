@@ -199,13 +199,13 @@ import "aos/dist/aos.css"; // Import AOS styles
                 {
                   name: "Anushka Jain",
                   role: "Backend Developer",
-                  description: "Anushka Jain is a backend developer with a focus on building efficient, scalable server-side solutions, ensuring that the backend works seamlessly with the frontend.",
-                  passion: "Anushka Jain's passion lies in creating high-performance systems that support scalable applications.",
-                  image: "../public/creator2.jpg",
-                  github: "https://github.com/anushkajain",
-                  linkedin: "https://linkedin.com/in/anushkajain",
-                  email: "mailto:anushka@example.com",
-                  portfolio: "https://anushkajain.dev"
+                  description: "I am a backend developer with a focus on building efficient, scalable server-side solutions, ensuring that the backend works seamlessly with the frontend.",
+                  passion: "My passion lies in creating high-performance systems that support scalable applications.",
+                  image: "../public/Anushka.jpeg",
+                  github: "https://github.com/AnushkaJainFirst",
+                  linkedin: "https://linkedin.com/in/anushkagratitude",
+                  email: "connectwithme2508@gmail.com",
+                  portfolio: "https://anushkajainfirst.github.io/My-Portfolio-Website-1/"
                 },
                 {
                   name: "Khushi Xyz",
