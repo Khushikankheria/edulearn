@@ -33,7 +33,7 @@ body {
 
 .mission-section .section-title {
   font-size: 2.5rem;
-  color: #007bff;
+  color: #6F3ABB;
   margin-bottom: 20px;
 }
 
@@ -55,7 +55,8 @@ body {
 
 /* Vision Section Styles */
 .vision-section {
-  background: linear-gradient(to right, #4e73df, #2c3e50);
+  /* background: linear-gradient(to right, #4e73df, #2c3e50); */
+  background: #F0C50D;
   color: white;
   padding: 60px 0;
 }
@@ -68,6 +69,7 @@ body {
 
 .vision-card {
   background-color: white;
+  
   color: #333;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -107,7 +109,7 @@ body {
 /* Core Values Section */
 .values-section .value-card {
   border-radius: 10px;
-  background-color: white;
+  background-color: #6A49C4;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -120,10 +122,14 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 10px 0;
+  color: white;
 }
 
 .values-section .value-description {
   font-size: 1rem;
-  color: #555;
+  color: white;
 }
+
+
+
 

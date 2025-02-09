@@ -146,7 +146,7 @@ import "aos/dist/aos.css"; // Import AOS styles
               ].map((value, index) => (
                 <div className="col-md-3 text-center mb-4" key={index} data-aos="fade-up">
                   <div className="value-card p-4 shadow rounded">
-                    <i className={`${value.icon} fa-3x text-primary mb-3`}></i>
+                    <i className={`${value.icon} fa-3x text-yellow mb-3`}></i>
                     <h5 className="value-title">{value.title}</h5>
                     <p className="value-description">{value.description}</p>
                   </div>
@@ -156,7 +156,7 @@ import "aos/dist/aos.css"; // Import AOS styles
           </div>
         </section>
   
-      
+      {/* meet the creator */}
       <section className="creator-section py-5" data-aos="fade-up">
         <div className="container">
           <h2
@@ -164,8 +164,8 @@ import "aos/dist/aos.css"; // Import AOS styles
             data-aos="fade-up"
             style={{
               fontFamily: "'Roboto', sans-serif",
-              color: "black",
-              fontSize: "3rem",
+              color: "#F0C50D",
+              fontSize: "4rem",
               fontWeight: "700",
               textTransform: "uppercase",
               letterSpacing: "2px",
@@ -208,11 +208,11 @@ import "aos/dist/aos.css"; // Import AOS styles
                   portfolio: "https://anushkajainfirst.github.io/My-Portfolio-Website-1/"
                 },
                 {
-                  name: "Khushi Xyz",
-                  role: "UI/UX Designer",
-                  description: "Khushi is a UI/UX designer who focuses on creating intuitive and beautiful user interfaces that prioritize user experience and interaction.",
-                  passion: "Khushi is passionate about designing interfaces that are both functional and aesthetically pleasing.",
-                  image: "../public/creator3.jpg",
+                  name: "Khushi Kankheria",
+                  role: "MERN Stack Developer",
+                  description: "I am a dedicated MERN stack developer passionate about building efficient, high-performing, and scalable web applications. I specialize in creating robust full-stack solutions that deliver seamless user experiences. ",
+                  passion: "I am passionate about integrating my AI/ML experience into web applications to enhance functionality, automation, and creating smarter and more efficient digital solutions.",
+                  image: "../public/khushi.jpeg",
                   github: "https://github.com/khushixyz",
                   linkedin: "https://linkedin.com/in/khushixyz",
                   email: "mailto:khushi@example.com",
@@ -243,13 +243,13 @@ import "aos/dist/aos.css"; // Import AOS styles
                             width: "280px",
                             height: "320px",
                             objectFit: "cover",
-                            border: "5px solid #007bff",
+                            border: "8px solid #6F3ABB",
                             padding: "30px",
                           }}
                         />
                       </div>
                       <div className="creator-passion mt-4">
-                        <h3 style={{ fontFamily: "'Roboto', sans-serif", color: "#4e73df" }}>
+                        <h3 style={{ fontFamily: "'Roboto', sans-serif", color: "#6F3ABB" }}>
                           Passion for Development
                         </h3>
                         <p style={{ fontSize: "1.1rem", color: "#555" }}>
@@ -263,7 +263,7 @@ import "aos/dist/aos.css"; // Import AOS styles
                       <div
                         className="creator-details"
                         style={{
-                          backgroundColor: "#4e73df",
+                          backgroundColor: "#6F3ABB",
                           borderRadius: "10px",
                           color: "#fff",
                           padding: "30px",
