@@ -163,7 +163,9 @@ const HomePage = () => {
               {faq.question}
             </button>
           </h2>
-          <div id={`collapse${index}`} className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}>
+          <div id={`collapse${index}`} className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
+          data-bs-parent="#faqAccordion"
+          >
             <div className="accordion-body">{faq.answer}</div>
           </div>
         </div>

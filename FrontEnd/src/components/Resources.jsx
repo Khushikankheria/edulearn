@@ -8,18 +8,18 @@ import "aos/dist/aos.css";
 
 const Resources = () => {
   const subjects = [
-    { name: "C++", image: "/public/c++.png", pdf: "/public/pdf/c++.pdf" },
-    { name: "DBMS", image: "/public/dbms.png", pdf: "/public/pdf/dbms.pdf" },
-    { name: "Java", image: "/public/java.png", pdf: "/public/pdf/java.pdf" },
-    { name: "Data Structures", image: "/public/dsa.png", pdf: "/public/pdf/dsa.pdf" },
-    { name: "Algorithms", image: "/public/algo.jpeg", pdf: "/public/pdf/osi.pdf" },
-    { name: "Operating Systems", image: "/public/os.jpeg", pdf: "/public/pdf/os.pdf" },
-    { name: "Python", image: "/public/python.png", pdf: "/public/pdf/python.pdf" },
-    { name: "Web Development", image: "/public/webde.png", pdf: "/public/pdf/webde.pdf" },
-    { name: "Computer Networks", image: "/public/computernet.jpeg", pdf: "/public/pdf/computerne.pdf" },
-    { name: "Machine Learning", image: "/public/machine.jpeg", pdf: "/public/pdf/ml.pdf" },
-    { name: "JavaScript", image: "/public/js.png", pdf: "/public/pdf/javascript.pdf" },
-    { name: "React", image: "/public/react.jpeg", pdf: "/public/pdf/react.pdf" },
+    { name: "C++", image: "/public/cpp.webp", pdf: "/public/pdf/c++.pdf" },
+    { name: "DBMS", image: "/public/dbms.webp", pdf: "/public/pdf/dbms.pdf" },
+    { name: "Java", image: "/public/java.webp", pdf: "/public/pdf/java.pdf" },
+    { name: "Data Structures", image: "/public/dsa.webp", pdf: "/public/pdf/dsa.pdf" },
+    { name: "Algorithms", image: "/public/algo.webp", pdf: "/public/pdf/osi.pdf" },
+    { name: "Operating Systems", image: "/public/os.webp", pdf: "/public/pdf/os.pdf" },
+    { name: "Python", image: "/public/python.webp", pdf: "/public/pdf/python.pdf" },
+    { name: "Web Development", image: "/public/webd.webp", pdf: "/public/pdf/webde.pdf" },
+    { name: "Computer Networks", image: "/public/cn.webp", pdf: "/public/pdf/computerne.pdf" },
+    { name: "Machine Learning", image: "/public/ml.webp", pdf: "/public/pdf/ml.pdf" },
+    { name: "JavaScript", image: "/public/js.webp", pdf: "/public/pdf/javascript.pdf" },
+    { name: "React", image: "/public/react.webp", pdf: "/public/pdf/react.pdf" },
   ];
 
   React.useEffect(() => {
