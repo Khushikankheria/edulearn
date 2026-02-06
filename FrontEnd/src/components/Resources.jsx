@@ -1,63 +1,113 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../Css/Resource.css";
-import AOS from "aos"; 
-import "aos/dist/aos.css"; 
 
 const Resources = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   const subjects = [
-    { name: "C++", image: "/public/cpp.webp", pdf: "/public/pdf/c++.pdf" },
-    { name: "DBMS", image: "/public/dbms.webp", pdf: "/public/pdf/dbms.pdf" },
-    { name: "Java", image: "/public/java.webp", pdf: "/public/pdf/java.pdf" },
-    { name: "Data Structures", image: "/public/dsa.webp", pdf: "/public/pdf/dsa.pdf" },
-    { name: "Algorithms", image: "/public/algo.webp", pdf: "/public/pdf/osi.pdf" },
-    { name: "Operating Systems", image: "/public/os.webp", pdf: "/public/pdf/os.pdf" },
-    { name: "Python", image: "/public/python.webp", pdf: "/public/pdf/python.pdf" },
-    { name: "Web Development", image: "/public/webd.webp", pdf: "/public/pdf/webde.pdf" },
-    { name: "Computer Networks", image: "/public/cn.webp", pdf: "/public/pdf/computerne.pdf" },
-    { name: "Machine Learning", image: "/public/ml.webp", pdf: "/public/pdf/ml.pdf" },
-    { name: "JavaScript", image: "/public/js.webp", pdf: "/public/pdf/javascript.pdf" },
-    { name: "React", image: "/public/react.webp", pdf: "/public/pdf/react.pdf" },
+    { name: "C++", image: "/public/cpp.webp", pdf: "/public/pdf/c++.pdf", category: "Programming" },
+    { name: "DBMS", image: "/public/dbms.webp", pdf: "/public/pdf/dbms.pdf", category: "Database" },
+    { name: "Data Structures", image: "/public/dsa.webp", pdf: "/public/pdf/dsa.pdf", category: "Core" },
+    { name: "Algorithms", image: "/public/algo.webp", pdf: "/public/pdf/osi.pdf", category: "Core" },
+    { name: "Operating Systems", image: "/public/os.webp", pdf: "/public/pdf/os.pdf", category: "Core" },
+    { name: "Python", image: "/public/python.webp", pdf: "/public/pdf/python.pdf", category: "Programming" },
+    { name: "Web Development", image: "/public/webd.webp", pdf: "/public/pdf/webde.pdf", category: "Web" },
+    { name: "Computer Networks", image: "/public/cn.webp", pdf: "/public/pdf/computerne.pdf", category: "Network" },
+    { name: "Machine Learning", image: "/public/ml.webp", pdf: "/public/pdf/ml.pdf", category: "AI" },
+    { name: "JavaScript", image: "/public/js.webp", pdf: "/public/pdf/javascript.pdf", category: "Web" },
+    { name: "React", image: "/public/react.webp", pdf: "/public/pdf/react.pdf", category: "Web" },
   ];
 
-  React.useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-out', 
-      once: true, 
+  const categories = ["All", "Programming", "Core", "Database", "Web", "Network", "AI"];
+
+  const filteredSubjects = useMemo(() => {
+    return subjects.filter((subject) => {
+      const matchesSearch = subject.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === "All" || subject.category === selectedCategory;
+      return matchesSearch && matchesCategory;
     });
-  }, []);
+  }, [searchTerm, selectedCategory]);
 
   return (
-    <div className="row justify-content-center" id="resource-head">
-      <h2 id="education-head">Educational Resources</h2>
-  {subjects.map((subject, index) => (
-    <div className="col-lg-3 col-md-6 col-sm-12 mb-4" key={index} data-aos="fade-up">
-      <div className="subject-card shadow-lg rounded-lg p-4 bg-gradient text-light">
-        <img
-          src={subject.image}
-          alt={subject.name}
-          className="subject-image img-fluid rounded mb-4"
-          style={{ height: "230px", objectFit: "cover", borderRadius: "12px" }}
-        />
-        <h5 className="subject-name text-center mb-3" style={{ fontWeight: "600", fontSize: "1.5rem" }}>
-          {subject.name}
-        </h5>
-        <a
-          href={subject.pdf}
-          className="btn btn-custom btn-block"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fas fa-download"></i> Download PDF
-        </a>
-      </div>
-    </div>
-  ))}
-</div>
+    <div className="resources-page">
+      {/* Search and Filter Section */}
+      <section className="search-filter-section">
+        <div className="container">
+          <div className="search-box">
+            <i className="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search resources by name..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+          </div>
 
+          <div className="category-filters">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`category-btn ${selectedCategory === category ? "active" : ""}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <p className="results-count">
+            Showing {filteredSubjects.length} resource{filteredSubjects.length !== 1 ? "s" : ""}
+          </p>
+        </div>
+      </section>
+
+      {/* Resources Grid */}
+      <section className="resources-grid-section">
+        <div className="container">
+          {filteredSubjects.length > 0 ? (
+            <div className="resources-grid">
+              {filteredSubjects.map((subject, index) => (
+                <div key={index} className="resource-card">
+                  <div className="card-image-wrapper">
+                    <img
+                      src={subject.image}
+                      alt={subject.name}
+                      className="card-image"
+                    />
+                    <div className="card-overlay">
+                      <a
+                        href={subject.pdf}
+                        className="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fas fa-download"></i> Download
+                      </a>
+                    </div>
+                  </div>
+                  <div className="card-content">
+                    <span className="category-badge">{subject.category}</span>
+                    <h3 className="card-title">{subject.name}</h3>
+                    <p className="card-description">Download comprehensive study materials and resources</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="no-results">
+              <i className="fas fa-search"></i>
+              <h3>No Resources Found</h3>
+              <p>Try adjusting your search or filter criteria</p>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
   );
 };
 

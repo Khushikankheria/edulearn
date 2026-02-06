@@ -2,321 +2,276 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "../Css/HomePage.css";
 import "../Css/About.css";
-import AOS from "aos"; // Import AOS
-import "aos/dist/aos.css"; // Import AOS styles
 
-  const AboutPage = () => {
-    useEffect(() => {
-      AOS.init({
-        duration: 1000,
-        easing: "ease",
-        once: true,
-      });
-    }, []);
-  
-    return (
-      <div className="about-page">
-        {/* Hero Section */}
-        <section className="hero-section" >
-          <div className="container text-center text-white" >
-            <h1 className="display-3">About Us</h1>
-            <p className="lead">
-              Transforming education through innovation, fostering knowledge, and
-              empowering learners everywhere.
+const AboutPage = () => {
+  const creators = [
+    {
+      name: "Divesh Sachdeva",
+      role: "MERN Stack Developer",
+      description:
+        "Passionate developer with expertise in building dynamic and scalable web applications using MongoDB, Express.js, React.js, and Node.js.",
+      passion:
+        "Creating efficient and impactful web applications. Solving complex problems and building scalable, user-friendly solutions that help users in their daily lives.",
+      image: "../public/Divesh.png",
+      github: "https://github.com/DiveshSachdeva12",
+      linkedin: "https://www.linkedin.com/in/divesh-kumar-sachdeva-b618bb250/",
+      email: "mailto:diveshkumarsachdeva85@gmail.com",
+      portfolio: "https://diveshsachdeva12.github.io/Portfolio-Divesh/",
+    },
+    {
+      name: "Khushi Kankheria",
+      role: "MERN Stack Developer",
+      description:
+        "Dedicated developer passionate about building efficient, high-performing, and scalable web applications with robust full-stack solutions.",
+      passion:
+        "Integrating AI/ML experience into web applications to enhance functionality, automation, and creating smarter digital solutions.",
+      image: "../public/khushi.jpeg",
+      github: "https://github.com/Khushikankheria",
+      linkedin: "https://www.linkedin.com/in/khushi-kankheria-0b1751256/",
+      email: "mailto:khushi@example.com",
+      portfolio: "https://khushikankheria-portfolio.netlify.app/",
+    },
+  ];
+
+  const values = [
+    {
+      icon: "fas fa-lightbulb",
+      title: "Innovation",
+      description: "Driving change through cutting-edge tools and creative solutions.",
+    },
+    {
+      icon: "fas fa-users",
+      title: "Community",
+      description: "Building a supportive network of learners and educators.",
+    },
+    {
+      icon: "fas fa-heart",
+      title: "Passion",
+      description: "Fueling education with dedication and a love for learning.",
+    },
+    {
+      icon: "fas fa-handshake",
+      title: "Integrity",
+      description: "Maintaining trust and transparency in everything we do.",
+    },
+  ];
+
+  const visionPoints = [
+    {
+      icon: "fas fa-globe",
+      title: "Global Accessibility",
+      description:
+        "Empowering learners worldwide by making education available to everyone, anytime, anywhere.",
+    },
+    {
+      icon: "fas fa-brain",
+      title: "Innovative Learning",
+      description:
+        "Revolutionizing education through creative tools and advanced technology for better engagement.",
+    },
+    {
+      icon: "fas fa-hands-helping",
+      title: "Community Collaboration",
+      description:
+        "Building a supportive network of educators and learners, fostering collaboration and shared growth.",
+    },
+  ];
+
+  return (
+    <div className="about-page">
+      {/* Hero Section */}
+      <section className="about-hero">
+        <div className="hero-content">
+          <h1 className="hero-title">About EduLearn</h1>
+          <p className="hero-subtitle">
+            Transforming education through innovation, fostering knowledge, and
+            empowering learners everywhere.
+          </p>
+          <div className="hero-divider"></div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="mission-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Our Mission</h2>
+            <p className="subtitle">
+              Providing world-class learning experiences to everyone
             </p>
           </div>
-        </section>
-  
-        {/* Our Mission Section */}
-        <section className="mission-section py-5">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-md-6" data-aos="fade-right" >
-                <img
-                  src="/public/mission.jpeg"
-                  alt="Our Mission"
-                  className="img-fluid rounded shadow"
-                  id="img-of-mission"
-                />
-              </div>
-              <div className="col-md-6" data-aos="fade-left">
-                <h2 className="section-title">Our Mission</h2>
-                <p className="mission-text" style={{color:"black"}}>
-                  Our mission is to provide a world-class learning experience
-                  accessible to everyone, everywhere. We are committed to
-                  fostering innovation and empowering students, educators, and
-                  communities to achieve their full potential.
-                </p>
-                <ul className="list-unstyled">
-                  <li>
-                    <i className="fas fa-check-circle text-primary me-2"></i>
-                    Empowering learners through accessible education.
-                  </li>
-                  <li>
-                    <i className="fas fa-check-circle text-primary me-2"></i>
-                    Fostering growth with innovative tools and resources.
-                  </li>
-                  <li>
-                    <i className="fas fa-check-circle text-primary me-2"></i>
-                    Building a community of passionate educators and students.
-                  </li>
-                </ul>
-              </div>
+
+          <div className="mission-content">
+            <div className="mission-image">
+              <img src="../public/mission.jpeg" alt="Our Mission" />
+              <div className="image-overlay"></div>
             </div>
-          </div>
-        </section>
-  
-        {/* Vision Section */}
-        <section className="vision-section text-white">
-  <div className="container py-5">
-    <h2 className="section-title text-center mb-4">Our Vision</h2>
-    <div className="row text-center d-flex align-items-stretch">
-      {/* Vision Point 1 */}
-      <div className="col-md-4 mb-4" data-aos="fade-up">
-        <div className="vision-card p-4 shadow rounded h-100 d-flex flex-column">
-          <i className="fas fa-globe fa-3x text-primary mb-3"></i>
-          <h5 className="vision-card-title">Global Accessibility</h5>
-          <p className="vision-card-text">
-            Empowering learners worldwide by making education available to
-            everyone, anytime, anywhere.
-          </p>
-        </div>
-      </div>
 
-      {/* Vision Point 2 */}
-      <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div className="vision-card p-4 shadow rounded h-100 d-flex flex-column">
-          <i className="fas fa-brain fa-3x text-success mb-3"></i>
-          <h5 className="vision-card-title">Innovative Learning</h5>
-          <p className="vision-card-text">
-            Revolutionizing education through creative tools and advanced
-            technology for better engagement.
-          </p>
-        </div>
-      </div>
+            <div className="mission-text">
+              <p className="mission-description">
+                Our mission is to provide a world-class learning experience
+                accessible to everyone, everywhere. We are committed to
+                fostering innovation and empowering students, educators, and
+                communities to achieve their full potential.
+              </p>
 
-      {/* Vision Point 3 */}
-      <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-        <div className="vision-card p-4 shadow rounded h-100 d-flex flex-column">
-          <i className="fas fa-hands-helping fa-3x text-warning mb-3"></i>
-          <h5 className="vision-card-title">Community Collaboration</h5>
-          <p className="vision-card-text">
-            Building a supportive network of educators and learners, fostering
-            collaboration and shared growth.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  
-        {/* Core Values Section */}
-        <section className="values-section py-5">
-          <div className="container">
-            <h2 className="section-title text-center mb-5">Our Core Values</h2>
-            <div className="row">
-              {[
-                {
-                  icon: "fas fa-lightbulb",
-                  title: "Innovation",
-                  description:
-                    "Driving change through cutting-edge tools and creative solutions.",
-                },
-                {
-                  icon: "fas fa-users",
-                  title: "Community",
-                  description:
-                    "Building a supportive network of learners and educators.",
-                },
-                {
-                  icon: "fas fa-heart",
-                  title: "Passion",
-                  description:
-                    "Fueling education with dedication and a love for learning.",
-                },
-                {
-                  icon: "fas fa-handshake",
-                  title: "Integrity",
-                  description:
-                    "Maintaining trust and transparency in everything we do.",
-                },
-              ].map((value, index) => (
-                <div className="col-md-3 text-center mb-4" key={index} data-aos="fade-up">
-                  <div className="value-card p-4 shadow rounded">
-                    <i className={`${value.icon} fa-3x text-yellow mb-3`}></i>
-                    <h5 className="value-title">{value.title}</h5>
-                    <p className="value-description">{value.description}</p>
+              <div className="mission-points">
+                <div className="mission-point">
+                  <div className="point-icon">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <div className="point-text">
+                    <h4>Accessible Education</h4>
+                    <p>Empowering learners through quality content anytime, anywhere.</p>
                   </div>
                 </div>
-              ))}
+
+                <div className="mission-point">
+                  <div className="point-icon">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <div className="point-text">
+                    <h4>Innovation & Growth</h4>
+                    <p>Fostering growth with innovative tools and resources.</p>
+                  </div>
+                </div>
+
+                <div className="mission-point">
+                  <div className="point-icon">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <div className="point-text">
+                    <h4>Community Building</h4>
+                    <p>Building passionate communities of educators and students.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-  
-      {/* meet the creator */}
-      <section className="creator-section py-5" data-aos="fade-up">
-        <div className="container">
-          <h2
-            className="text-center display-4 mb-5"
-            data-aos="fade-up"
-            style={{
-              fontFamily: "'Roboto', sans-serif",
-              color: "#F0C50D",
-              fontSize: "4rem",
-              fontWeight: "700",
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              textShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)",
-            }}
-          >
-            Meet the Creators
-          </h2>
+        </div>
+      </section>
 
-          {/* Creator Slider */}
-          <div
-            id="creatorSlider"
-            className="carousel slide"
-            data-bs-ride="carousel"
-            data-aos="fade-up"
-          >
+      {/* Vision Section */}
+      <section className="vision-section">
+        <div className="container">
+          <div className="section-header section-header-light">
+            <h2>Our Vision</h2>
+            <p className="subtitle">
+              Building the future of education through three core pillars
+            </p>
+          </div>
+
+          <div className="vision-grid">
+            {visionPoints.map((point, index) => (
+              <div key={index} className="vision-card">
+                <div className="vision-icon">
+                  <i className={point.icon}></i>
+                </div>
+                <h3 className="vision-title">{point.title}</h3>
+                <p className="vision-text">{point.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="values-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Core Values</h2>
+            <p className="subtitle">
+              Principles that guide everything we do
+            </p>
+          </div>
+
+          <div className="values-grid">
+            {values.map((value, index) => (
+              <div key={index} className="value-card">
+                <div className="value-icon">
+                  <i className={value.icon}></i>
+                </div>
+                <h3 className="value-title">{value.title}</h3>
+                <p className="value-description">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Creators Section */}
+      <section className="creators-section">
+        <div className="container">
+          <div className="section-header section-header-light">
+            <h2>Meet The Creators</h2>
+            <p className="subtitle">
+              Passionate developers building the future of education
+            </p>
+          </div>
+
+          {/* Creator Carousel */}
+          <div id="creatorSlider" className="carousel slide creator-carousel" data-bs-ride="carousel">
             <div className="carousel-inner">
-              {/* Creator Information */}
-              {[ 
-                {
-                  name: "Divesh Sachdeva",
-                  role: "MERN Stack Developer",
-                  description: "I am a passionate MERN stack developer with expertise in building dynamic and scalable web applications. I love to leverage MongoDB, Express.js, React.js, and Node.js to create full-stack solutions that deliver great user experiences.",
-                  passion: "I am passionate about creating efficient and impactful web applications. I enjoy solving problems and building scalable, user-friendly solutions that help users in their day-to-day lives.",
-                  image: "../public/Divesh.png",
-                  github: "https://github.com/DiveshSachdeva12",
-                  linkedin: "https://www.linkedin.com/in/divesh-kumar-sachdeva-b618bb250/",
-                  email: "mailto:diveshkumarsachdeva85@gmail.com",
-                  portfolio: "https://diveshsachdeva12.github.io/Portfolio-Divesh/"
-                },
-                {
-                  name: "Anushka Jain",
-                  role: "Backend Developer",
-                  description: "I am a backend developer with a focus on building efficient, scalable server-side solutions, ensuring that the backend works seamlessly with the frontend.",
-                  passion: "My passion lies in creating high-performance systems that support scalable applications.",
-                  image: "../public/Anushka.jpeg",
-                  github: "https://github.com/AnushkaJainFirst",
-                  linkedin: "https://linkedin.com/in/anushkagratitude",
-                  email: "connectwithme2508@gmail.com",
-                  portfolio: "https://anushkajainfirst.github.io/My-Portfolio-Website-1/"
-                },
-                {
-                  name: "Khushi Kankheria",
-                  role: "MERN Stack Developer",
-                  description: "I am a dedicated MERN stack developer passionate about building efficient, high-performing, and scalable web applications. I specialize in creating robust full-stack solutions that deliver seamless user experiences. ",
-                  passion: "I am passionate about integrating my AI/ML experience into web applications to enhance functionality, automation, and creating smarter and more efficient digital solutions.",
-                  image: "../public/khushi.jpeg",
-                  github: "https://github.com/khushixyz",
-                  linkedin: "https://linkedin.com/in/khushixyz",
-                  email: "mailto:khushi@example.com",
-                  portfolio: "https://khushixyz.dev"
-                },
-                {
-                  name: "Nidhi Verma",
-                  role: "Project Manager",
-                  description: "Nidhi is a project manager who ensures smooth coordination and timely delivery of projects, maintaining high standards of quality and collaboration.",
-                  passion: "Nidhi is dedicated to driving project success with effective communication and organization skills.",
-                  image: "../public/Nidhi.jpeg",
-                  github: "https://github.com/Nidhi-Verma18",
-                  linkedin: "https://www.linkedin.com/in/nidhi-verma-663756265/",
-                  email: "nidhi18verma3@gmail.com",
-                  portfolio: "https://nidhixyz.dev"
-                }
-              ].map((creator, index) => (
-                <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index}>
-                  <div className="row align-items-center">
-                    {/* Left Section - Image and Passion */}
-                    <div className="col-md-6">
+              {creators.map((creator, index) => (
+                <div
+                  key={index}
+                  className={`carousel-item ${index === 0 ? "active" : ""}`}
+                >
+                  <div className="creator-slide">
+                    <div className="creator-image-col">
                       <div className="creator-image">
-                        <img
-                          src={creator.image}
-                          alt={`${creator.name} Image `}
-                          className="img-fluid rounded-circle"
-                          style={{
-                            width: "280px",
-                            height: "320px",
-                            objectFit: "cover",
-                            border: "8px solid #6F3ABB",
-                            padding: "30px",
-                          }}
-                        />
+                        <img src={creator.image} alt={creator.name} />
                       </div>
-                      <div className="creator-passion mt-4">
-                        <h3 style={{ fontFamily: "'Roboto', sans-serif", color: "#6F3ABB" }}>
-                          Passion for Development
-                        </h3>
-                        <p style={{ fontSize: "1.1rem", color: "#555" }}>
-                          {creator.passion}
-                        </p>
+                      <div className="creator-passion">
+                        <h3>Passion for Development</h3>
+                        <p>{creator.passion}</p>
                       </div>
                     </div>
 
-                    {/* Right Section - Details and Social Media */}
-                    <div className="col-md-6">
-                      <div
-                        className="creator-details"
-                        style={{
-                          backgroundColor: "#6F3ABB",
-                          borderRadius: "10px",
-                          color: "#fff",
-                          padding: "30px",
-                          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                        }}
-                      >
-                        <h3 className="creator-name" style={{ fontSize: "2rem", fontWeight: "600", color: "#fff" }}>
-                          {creator.name}
-                        </h3>
-                        <p className="role" style={{ fontSize: "1.2rem", color: "#f8f9fc" }}>
-                          {creator.role}
-                        </p>
-                        <p className="description" style={{ fontSize: "1rem", color: "#f1f1f1" }}>
-                          {creator.description}
-                        </p>
+                    <div className="creator-details-col">
+                      <div className="creator-details">
+                        <h3 className="creator-name">{creator.name}</h3>
+                        <p className="creator-role">{creator.role}</p>
+                        <p className="creator-description">{creator.description}</p>
 
                         {/* Social Media Links */}
-                        <div className="d-flex justify-content-start gap-3 mt-4">
+                        <div className="creator-social">
                           <a
                             href={creator.github}
-                            className="btn btn-dark btn-lg"
+                            className="social-link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ fontSize: "1rem", padding: "12px 20px" }}
+                            title="GitHub"
                           >
                             <i className="fab fa-github"></i> GitHub
                           </a>
                           <a
                             href={creator.linkedin}
-                            className="btn btn-primary btn-lg"
+                            className="social-link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ fontSize: "1rem", padding: "12px 20px" }}
+                            title="LinkedIn"
                           >
                             <i className="fab fa-linkedin"></i> LinkedIn
                           </a>
                           <a
                             href={creator.email}
-                            className="btn btn-danger btn-lg"
+                            className="social-link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ fontSize: "1rem", padding: "12px 20px" }}
+                            title="Email"
                           >
                             <i className="fas fa-envelope"></i> Email
                           </a>
                           <a
                             href={creator.portfolio}
-                            className="btn btn-info btn-lg"
+                            className="social-link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ fontSize: "1rem", padding: "12px 20px" }}
+                            title="Portfolio"
                           >
-                            Visit Portfolio
+                            <i className="fas fa-globe"></i> Portfolio
                           </a>
                         </div>
                       </div>
@@ -327,29 +282,29 @@ import "aos/dist/aos.css"; // Import AOS styles
             </div>
 
             {/* Carousel Controls */}
-            <a
+            <button
               className="carousel-control-prev"
-              href="#creatorSlider"
-              role="button"
+              type="button"
+              data-bs-target="#creatorSlider"
               data-bs-slide="prev"
             >
               <span className="carousel-control-prev-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Previous</span>
-            </a>
-            <a
+            </button>
+            <button
               className="carousel-control-next"
-              href="#creatorSlider"
-              role="button"
+              type="button"
+              data-bs-target="#creatorSlider"
               data-bs-slide="next"
             >
               <span className="carousel-control-next-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Next</span>
-            </a>
+            </button>
           </div>
         </div>
       </section>
     </div>
-
   );
-}
+};
+
 export default AboutPage;

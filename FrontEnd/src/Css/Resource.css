@@ -1,145 +1,336 @@
-/* General Styles */
-.resources-section {
+/* ===================================
+   RESOURCES PAGE CSS - MODERN DESIGN
+   =================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.resources-page {
+  overflow-x: hidden;
+  background: #f8f9fa;
   min-height: 100vh;
-  padding: 80px 0;
-  color: #ffffff;
 }
 
-/* Section Header */
-#resource-head {
-  background-color: #001845;
-  padding: 80px;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
+/* ===================================
+   SEARCH & FILTER SECTION
+   =================================== */
+
+.search-filter-section {
+  padding: 60px 20px;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-#education-head {
-  font-size: 3rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #ffcc00;
-  margin-bottom: 30px;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: Arial, Helvetica, sans-serif;
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 40px;
 }
 
-/* Paragraph */
-/* p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #ffffff;
-  max-width: 800px;
-  margin: 0 auto 50px;
-  text-align: center;
-  letter-spacing: 0.5px;
-} */
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667eea;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
 
-/* Subject Card */
-.subject-card {
-  background-color: #001845;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+.search-input {
   width: 100%;
-  max-width: 350px;
+  padding: 15px 20px 15px 50px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+}
+
+.category-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.category-btn {
+  padding: 10px 24px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #666;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.category-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.results-count {
+  text-align: center;
+  color: #999;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ===================================
+   RESOURCES GRID SECTION
+   =================================== */
+
+.resources-grid-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.02) 100%);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.subject-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
+.resource-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-/* Subject Image */
-.subject-image {
-  height: 180px;
+.resource-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.card-image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
-.subject-card:hover .subject-image {
-  transform: scale(1.05);
+.resource-card:hover .card-image {
+  transform: scale(1.1);
 }
 
-/* Subject Title */
-.subject-name {
-  font-size: 1.6rem;
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(102, 126, 234, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.resource-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.download-btn {
+  background: white;
+  color: #667eea;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
   font-weight: 600;
-  color: #ffc300;
-  margin: 20px 0;
-  letter-spacing: 1px;
-  text-transform: capitalize;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Download Button */
-.btn-custom {
-  background-color: #ffcc00;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 5px;
-  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-  margin-top: 20px;
-  text-transform: uppercase;
-  box-shadow: 0 6px 15px rgba(255, 200, 0, 0.2);
+.download-btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.btn-custom:hover {
-  background: linear-gradient(to right, #ff512f, #dd2476);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 200, 0, 0.8);
+.card-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .subject-card {
-    margin-bottom: 30px;
-    padding: 25px 15px;
-  }
+.category-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  color: #667eea;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  width: fit-content;
 }
 
-@media (max-width: 992px) {
-  .subject-card {
-    margin-bottom: 25px;
-    padding: 20px;
-  }
+.card-title {
+  font-size: 1.3rem;
+  color: #1a1a2e;
+  margin: 0 0 10px 0;
+  font-weight: 700;
 }
+
+.card-description {
+  color: #999;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===================================
+   NO RESULTS STATE
+   =================================== */
+
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+  color: #999;
+}
+
+.no-results i {
+  font-size: 4rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.no-results h3 {
+  font-size: 1.8rem;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.no-results p {
+  font-size: 1.05rem;
+  color: #999;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
 
 @media (max-width: 768px) {
-  #education-head {
-    font-size: 2.8rem;
+  .hero-title {
+    font-size: 2rem;
   }
 
-  p {
-    font-size: 1.1rem;
-  }
-
-  .subject-card {
-    padding: 20px;
-    margin-bottom: 25px;
-  }
-}
-
-@media (max-width: 576px) {
-  #education-head {
-    font-size: 2.2rem;
-  }
-
-  p {
+  .hero-subtitle {
     font-size: 1rem;
   }
 
-  .subject-card {
+  .resources-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .category-filters {
+    gap: 10px;
+  }
+
+  .category-btn {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  .card-image-wrapper {
+    height: 200px;
+  }
+
+  .card-content {
     padding: 15px;
-    max-width: 90%;
-    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-hero {
+    padding: 60px 15px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .search-input {
+    padding: 12px 15px 12px 45px;
+    font-size: 0.9rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .category-filters {
+    gap: 8px;
+  }
+
+  .category-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .card-image-wrapper {
+    height: 180px;
+  }
+
+  .card-content {
+    padding: 12px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .no-results i {
+    font-size: 3rem;
+  }
+
+  .no-results h3 {
+    font-size: 1.4rem;
   }
 }
