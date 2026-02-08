@@ -15,7 +15,7 @@ Education Learning is an interactive platform designed to make online education 
 
 ## Screenshots
 
-![Image](https://github.com/user-attachments/assets/b14f7be3-9954-4571-bc7b-7440bc074b54)
+![Image](https://github.com/user-attachments/assets/a411dcc5-fbc2-47b1-a315-797d199519bf)
 
 ![Image](https://github.com/user-attachments/assets/12b95d91-d7b3-42b3-bf1c-ea66f9b4f658)
 
